@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import tailorImage from "@/assets/rajani.jpg";
+import tailorImage from "@/assets/Rajani.png";
 
 export default function AboutSection() {
   return (

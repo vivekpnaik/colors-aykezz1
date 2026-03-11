@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import ParticleBackground from "./ParticleBackground";
+import logo from "@/assets/logo.png";
 
 export default function HeroSection() {
   const scrollTo = (id: string) => {
@@ -11,14 +12,36 @@ export default function HeroSection() {
       <ParticleBackground />
 
       <div className="relative z-10 container mx-auto px-6 text-center">
+
+        {/* TITLE AREA */}
         <motion.div
+          className="relative inline-block"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-wider text-primary-foreground leading-tight">
+
+          {/* Background Logo */}
+          <img
+            src={logo}
+            alt="Colors Logo"
+            className="
+            absolute 
+            top-1/2 left-1/2
+            -translate-x-1/2 -translate-y-1/2
+            w-[900px] md:w-[1200px] lg:w-[1500px]
+            opacity-[0.14] mix-blend-soft-light
+            blur-[1px]
+            pointer-events-none
+            select-none
+            "
+          />
+
+          {/* COLORS text */}
+          <h1 className="relative font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-wider text-primary-foreground leading-tight">
             <span className="text-gradient-rose-gold">COLORS</span>
           </h1>
+
           <p className="mt-4 font-display text-lg sm:text-xl md:text-2xl text-gold/80 tracking-wider font-light italic">
             Elegant Tailoring for Every Woman
           </p>
@@ -45,6 +68,7 @@ export default function HeroSection() {
           >
             Order Now
           </button>
+
           <button
             onClick={() => scrollTo("categories")}
             className="px-8 py-3 rounded-full font-body text-lg tracking-wider border border-gold/50 text-gold hover:bg-gold/10 transition-colors"

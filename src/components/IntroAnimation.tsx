@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ParticleBackground from "./ParticleBackground";
+import logo from "@/assets/logo.png"; // your logo
 
 interface IntroAnimationProps {
   onEnter: () => void;
@@ -25,7 +26,8 @@ export default function IntroAnimation({ onEnter }: IntroAnimationProps) {
           <ParticleBackground />
 
           <div className="relative z-10 flex flex-col items-center gap-8">
-            {/* Glowing circle logo */}
+            
+            {/* Glowing logo */}
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -33,16 +35,15 @@ export default function IntroAnimation({ onEnter }: IntroAnimationProps) {
               className="relative"
             >
               <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl animate-glow" />
-              <div className="relative w-28 h-28 rounded-full border-2 border-gold/50 flex items-center justify-center backdrop-blur-sm">
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.8, duration: 0.8 }}
-                  className="font-display text-3xl text-gold tracking-widest"
-                >
-                  C
-                </motion.span>
-              </div>
+
+              <motion.img
+                src={logo}
+                alt="Colors Tailoring Logo"
+                className="w-32 md:w-40 drop-shadow-2xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 1 }}
+              />
             </motion.div>
 
             {/* Shop name */}
